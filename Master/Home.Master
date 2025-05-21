@@ -1,0 +1,16 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Home.master.cs" Inherits="EKECMS.Master.Home" %>
+<%@ Register src="../Controls/Head.ascx" tagname="Head" tagprefix="uc1" %>
+<%@ Register src="../Controls/Top.ascx" tagname="Top" tagprefix="uc2" %>
+<%@ Register src="../Controls/CopyRight.ascx" tagname="CopyRight" tagprefix="uc3" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <uc1:Head ID="Head1" runat="server" />
+</head>
+<body>
+<uc2:Top ID="Top1" runat="server" />
+<asp:ContentPlaceHolder ID="HomeBody" runat="server">
+</asp:ContentPlaceHolder>     
+<uc3:CopyRight ID="CopyRight1" runat="server" />
+</body>
+</html>
