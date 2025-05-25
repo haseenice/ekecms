@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>评论模块</title>
+</head>
+<style>
+td,input,body,a{font-size:12px;}
+
+</style>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="../../ePager/default/style.css" rel="stylesheet" type="text/css" />
+<body>
+
+
+
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+<div class="ecomment" style="margin-bottom:10px;">
+<h1>&nbsp;↓&nbsp;评论信息</h1>
+
+<dl>
+<dt>&nbsp;↑&nbsp;Name:&nbsp;444&nbsp;&nbsp;Time:&nbsp;2017-07-31 14:11:30</dt>
+<dd>
+<span class="msgico">&nbsp;</span>55有这么一段HTML，请挑毛病：&lt;P&gt;&amp;nbsp;&amp;nbsp;哥写的不是HTML，是寂寞。&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;我说：&lt;br&gt;不要迷恋哥，哥只是一个传说这是原来雅
+不要迷恋哥，哥只是一个传说这是原来雅
+不要迷恋哥，哥只是一个传说这是原来雅
+不要迷恋哥，哥只是一个传说这是原来雅
+不要迷恋哥，哥只是一个传说这是原来雅
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>&nbsp;↑&nbsp;Name:&nbsp;东东&nbsp;&nbsp;Time:&nbsp;2017-07-31 14:11:30</dt>
+<dd>
+<span class="msgico">&nbsp;</span>55有这么一段HTML，请挑毛病：&lt;P&gt;&amp;nbsp;&amp;nbsp;哥写的不是HTML，是寂寞。&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;我说：&lt;br&gt;不要迷恋哥，哥只是一个传说这是原来雅
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>&nbsp;↑&nbsp;Name:&nbsp;444&nbsp;&nbsp;Time:&nbsp;2017-07-31 14:11:30</dt>
+<dd>
+<span class="msgico">&nbsp;</span>55有这么一段HTML，请挑毛病：&lt;P&gt;&amp;nbsp;&amp;nbsp;哥写的不是HTML，是寂寞。&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;我说：&lt;br&gt;不要迷恋哥，哥只是一个传说这是原来雅
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>&nbsp;↑&nbsp;Name:&nbsp;444&nbsp;&nbsp;Time:&nbsp;2017-07-31 14:11:30</dt>
+<dd>
+<span class="msgico">&nbsp;</span>有这么一段HTML，请挑毛病：&lt;P&gt;&amp;nbsp;&amp;nbsp;哥写的不是HTML，是寂寞。&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;我说：&lt;br&gt;不要迷恋哥，哥只是一个传说这是原来雅
+</dd>
+</dl>
+
+<hr />
+
+
+
+</div>	
+	
+	
+<div style="margin-bottom:20px;width:660px;">
+<div class="epager"><table border="0" cellspacing="0" cellpadding="0" align="center">
+<form id="frmgopage" name="frmgopage" method="post" action="?id=14" onSubmit="return goSearchPage(this);">
+<tr>
+<td align="right">共 <font color="#cc0000">7</font> 条&nbsp;&nbsp;<span>..1</span><span>&lt;&lt;</span><a href="Article.aspx?id=14&page=1" title="第1页" class="cur">1</a><span>&gt;&gt;</span><span>..1</span>&nbsp;&nbsp;到第&nbsp;<input type="text" id="page" name="page" class="page" fieldname="页码" notnull="true" datatype="int" minvalue="1" maxvalue="1" value="1" evalue="1" autocomplete="off" />&nbsp;页&nbsp;</td>
+<td width="50" align="left"><input class="skip" type="submit" name="Submit" value="" /></td>
+</tr>
+</form>
+</table>
+</div>
+</div>
+
+	
+<div class="ecomment" style="margin-bottom:10px;">
+<h1>&nbsp;↑&nbsp;发表评论</h1>
+<form name="frmcomment" id="frmcomment" method="post" action="" onSubmit="return checkComment(this);">
+<div class="left">
+<span class="en">Name</span> 您的姓名<br>
+
+<span class="en">Comment </span> 评论内容<br><br><br><br>
+<span class="en">Auth Code </span> 验证码<br>
+</div>
+<div class="right" style="margin-bottom:30px;">
+<input name="Comment" type="hidden" id="Comment" value="save">
+<input name="type" type="hidden" id="type" value="1">
+<input name="id" type="hidden" id="id" value="16">
+<input name="f1" type="text" id="f1" class="txtinput" notnull="true" fieldname="姓名" style="width:180px;margin-top:5px;">&nbsp;<font color="#FF0000">*</font><input name="nm" type="checkbox" id="nm" value="0" onClick="set(this);"> <label for="nm" style="color:#666666;">匿名发表</label><br>
+
+<textarea name="f3" cols="60" rows="4" id="f3" class="txtinput" notnull="true" fieldname="评论内容" style="margin-top:5px;margin-bottom:5px;height:60px;"></textarea><br>
+评论内容不能超过150个字符<br>
+<input name="yzm" type="text" id="yzm" maxlength="4" class="txtinput" notnull="true" fieldname="验证码" style="width:50px;margin-top:5px;" onFocus="rndpic.src='Plugins/RndPic.aspx';">&nbsp;<font color="#FF0000">*</font>&nbsp;&nbsp;<img id="rndpic" align="absmiddle" onClick="this.src='../../RndPic.aspx';" height="18" src="images/none.gif" width="45" style="margin-top:1px;"><br>
+<input type="submit" name="Submit" value=""  class="btn"><br>
+所有评论只代表网友个人观点，不代表本站观点。请各位遵纪守法并注意语言文明。
+</div>
+</form>
+</div>	
+
+	
+	
+
+
+<div class="ecomment" style="margin-bottom:10px;clear:both;">
+<h1>&nbsp;↑&nbsp;发表评论</h1>
+<form name="frmcomment" id="frmcomment" method="post" action="" onSubmit="return checkComment(this);">
+<input name="Comment" type="hidden" id="Comment" value="save">
+<input name="type" type="hidden" id="type" value="1">
+<input name="id" type="hidden" id="id" value="16">
+<ul>
+<li><label><span class="en">Name </span> 您的姓名：</label><input name="f1" type="text" id="f1" class="txtinput" notnull="true" fieldname="姓名" style="width:180px;margin-top:5px;">&nbsp;<font color="#FF0000">*</font><input name="nm" type="checkbox" id="nm" value="0" onClick="set(this);"> <label for="nm" style="color:#666666;width:auto;">匿名发表</label></li>
+<li><label for="content"><span class="en">Comment </span>详细内容：</label><textarea name="f3" cols="60" rows="4" id="f3" class="txtinput" notnull="true" fieldname="评论内容" style="margin-top:5px;margin-bottom:5px;height:60px;"></textarea></li>
+<li><label><span class="en">Auth Code </span> 验证码：</label><input name="yzm" type="text" id="yzm" maxlength="4" class="txtinput" notnull="true" fieldname="验证码" style="width:50px;margin-top:5px;" onFocus="rndpic.src='Plugins/RndPic.aspx';">&nbsp;<font color="#FF0000">*</font>&nbsp;&nbsp;<img id="rndpic" align="absmiddle" onClick="this.src='../../RndPic.aspx';" height="18" src="images/none.gif" width="45" style="margin-top:1px;"></li>
+<li><label>&nbsp;</label><input type="submit" name="Submit" value=""  class="btn"></li>
+<li style="line-height:35px;"><label>&nbsp;</label>所有评论只代表网友个人观点，不代表本站观点。请各位遵纪守法并注意语言文明。</li>
+</ul>
+</form>
+</div>	
+</td>
+  </tr>
+</table>
+
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_687503'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D687503%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+</html>
