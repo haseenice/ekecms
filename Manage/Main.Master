@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.Master.cs" Inherits="eFrameWork.Manage.Main" %>
+<%@ Register src="Menu.ascx" tagname="Menu" tagprefix="uc1" %><!DOCTYPE html>
+<html>
+<head>
+    <title><asp:Literal ID="LitTitle" runat="server" /></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9;IE=8;IE=7;" />
+	<meta http-equiv="X-UA-Compatible" content="edge" /><!--标准模式-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
+	<meta name="renderer" content="webkit"><!--极速模式-->
+	<meta name="renderer" content="webkit|ie-comp|ie-stand"> <!--极速模式，兼容模式，IE模式打开-->
+	<meta http-equiv="imagetoolbar" content="no" />
+    <link href="../Plugins/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">  
+    <link href="../Plugins/dripiconsv2/css/icons.min.css" rel="stylesheet">  
+    <link href="../Plugins/layui226/css/layui.css?ver=<%=Common.Version %>" rel="stylesheet" type="text/css" />     
+    <link href="../Plugins/eControls/default/style.css?ver=<%=Common.Version %>" rel="stylesheet" type="text/css" />   
+    <link href="../Plugins/Theme/default/style.css?ver=<%=Common.Version %>" rel="stylesheet" type="text/css" />   
+	<link href="../Plugins/Theme/manage/style.css?ver=<%=Common.Version %>" rel="stylesheet" type="text/css" />
+	<script src="../Scripts/Init.js?ver=<%=Common.Version %>"></script>
+    <%=Common.LoadJS %>
+    <script src="../Plugins/Theme/manage/layout.js?ver=<%=Common.Version %>"></script>
+    <script src="../Scripts/clipboard.min.js"></script>
+    <asp:Literal ID="LitJavascript" runat="server" />
+    <asp:Literal ID="LitStyle" runat="server" />
+</head>
+<body>
+<div class="eLayout_top<%=(TopFixed? " eLayout_top_fixed" : " eLayout_top_float") %>">
+    <div class="appname"><%= eConfig.manageName() %></div>
+    <div class="userinfo">
+        <img src="../images/auth1.png" style="display:none;max-width:22px;max-height:22px;" />
+        <a href="ExportConfig.aspx" class="outconfig" target="_blank">导出配置</a>
+        <a href="http://frame.eketeam.com/" class="helplink" target="_blank" title="eFrameWork开发框架">技术支持</a>
+        <span class="username"><%= user["Name"] %></span>
+        <a href="LoginOut.aspx" onClick="return confirm('确认要退出登录吗？');" class="loginout">退出登录</a>
+    </div> 
+    <a hef="javascript:;" onClick="switchTopFix();" class="topfixbtn<%=(TopFixed? " topfixbtn_fixed" : " topfixbtn_float") %>"></a></div>
+<div class="eLayout_body<%=(TopFixed? " eLayout_body_fixed" : " eLayout_body_float") %>">
+<div class="eLayout_menu <%=(LeftFixed? " eLayout_menu_fixed" : " eLayout_menu_float") %>">
+<a hef="javascript:;" onClick="switchLeftFix();" class="leftfixbtn<%=(LeftFixed? " leftfixbtn_fixed" : " leftfixbtn_float") %>"></a>
+    <uc1:Menu ID="Menu1" runat="server" />
+</div>
+<div class="eLayout_content<%=(LeftFixed? " eLayout_content_fixed" : " eLayout_content_float") %>">
+<asp:contentplaceholder id="ContentPlaceHolder1" runat="server" />
+</div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    var clip = new Clipboard(".copy");
+    clip.on('success', function (e) {
+        //layer.open({ content: "复制成功!请打开要赠送好友的聊天窗口粘贴.", skin: "msg", time: 2 });
+        layer.msg("复制成功!");
+    });
+    clip.on('error', function (e) {
+        //alert("复制失败")
+    });
+</script>
